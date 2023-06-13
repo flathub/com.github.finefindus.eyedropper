@@ -12,8 +12,7 @@
         "--socket=wayland",
         "--device=dri",
         "--env=G_MESSAGES_DEBUG=none",
-        "--env=RUST_BACKTRACE=1",
-        "--own-name=com.github.finefindus.eyedropper.SearchProvider"
+        "--env=RUST_BACKTRACE=1"
     ],
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin"
