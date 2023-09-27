@@ -1,7 +1,7 @@
 {
     "id": "com.github.finefindus.eyedropper",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -9,6 +9,7 @@
     "command": "eyedropper",
     "finish-args": [
         "--socket=fallback-x11",
+        "--share=ipc",
         "--socket=wayland",
         "--device=dri",
         "--env=G_MESSAGES_DEBUG=none",
@@ -19,13 +20,24 @@
     },
     "modules": [
         {
+            "name": "blueprint-compiler",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "tag": "v0.8.1"
+                }
+            ]
+        },
+        {
             "name": "eyedropper",
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FineFindus/eyedropper/releases/download/v0.6.0/eyedropper-0.6.0.tar.xz",
-                    "sha256": "9e92ca182c1cfd2433f2367bd1dd4c2c4db1f1032e5a6c1f66f8436db453f9be"
+                    "url": "https://github.com/FineFindus/eyedropper/releases/download/v1.0.0/eyedropper-1.0.0.tar.xz",
+                    "sha256": "b7fd9bc5c81a41d3b8ba7e7ea42f5c1597f9ba2d922c1bffc1b13d4749decef3"
                 }
             ]
         }
