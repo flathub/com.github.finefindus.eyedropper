@@ -1,7 +1,7 @@
 {
     "id": "com.github.finefindus.eyedropper",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -30,8 +30,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk/4.11/gtk-4.11.2.tar.xz",
-                    "sha256": "4a481da6b65b6add3f59966b0bb27e8139c381d0699402df662df2ce1c9e6913",
+                    "url": "https://download.gnome.org/sources/gtk/4.13/gtk-4.13.3.tar.xz",
+                    "sha256": "4f04a43e7c287360473f34fc27b629f64875795f3bc7ec2781df449c5e72f312",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gtk",
@@ -88,7 +88,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/hughsie/libxmlb.git",
-                    "commit": "6191220071233972d798b57841d08e4964952a17"
+                    "commit": "e64c60d993cd463edf0441a221fae263f9a6663e"
                 }
             ]
         },
@@ -104,8 +104,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ximion/appstream.git",
-                    "tag": "v0.16.2",
-                    "commit": "1ee6af91310f9deb47f3863a7a7ffb22c46bcce6",
+                    "tag": "v0.16.4",
+                    "commit": "bb973a21181f5979aabc056e9d93884feac1e66f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
@@ -127,7 +127,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "commit": "081673f4d099edce7d31af5006df871ee60b7d98"
+                    "commit": "af080fe1be861bc42a78c33c1ea8497edae52541"
                 }
             ]
         },
@@ -136,9 +136,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/FineFindus/eyedropper/releases/download/v0.7.0-beta/eyedropper-0.7.0.beta.tar.xz",
-                    "sha256": "42518afb555f5f64ef10461adacd44f47ee6ea7d0f00d7ce171bc80e46397ea7"
+                    "type": "git",
+                    "url": "https://github.com/FineFindus/eyedropper.git",
+                    "commit": "fa026bccf889775bf03e23ae2313421bb845ca9b"
                 }
             ]
         }
