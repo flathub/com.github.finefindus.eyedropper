@@ -1,0 +1,129 @@
+From c0b20382cfbf0c72b24eaa1008bcedffff1c3559 Mon Sep 17 00:00:00 2001
+From: Semen Fomchenkov <armatik@altlinux.org>
+Date: Thu, 5 Jun 2025 22:26:51 +0300
+Subject: [PATCH 1/4] metainfo: fixed errors that cause appstream validation to
+ fail
+
+Due to the absence of the <p> tag in some places before the <ul> list,
+appstream validation ended with an error.
+---
+ ...hub.finefindus.eyedropper.metainfo.xml.in.in | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+diff --git a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+index 011609f4..7ebd1390 100644
+--- a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
++++ b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+@@ -49,6 +49,7 @@
+   <releases>
+     <release version="2.1.0" date="2025-03-23">
+       <description translatable="no">
++        <p>In this version:</p>
+         <ul>
+           <li>RGB can now be displayed in decimal notation</li>
+           <li>Colors can now be directly entered, without picking a color first</li>
+@@ -80,7 +81,16 @@
+     </release>
+     <release version="1.0.0" date="2023-09-27">
+       <description translatable="no">
+-        <p>A new release with exciting new features and many improvements.</p>\n<ul><li>Allow entering any format</li><li>Display color in overview search</li><li>Export palettes to LibreOffice</li><li>A visual differentiation between color and background</li><li>Improved color conversion</li><li>Visual refinements to match the state of the art of GNOME apps</li><li>Internal code improvements and bug fixes</li></ul>
++        <p>A new release with exciting new features and many improvements.</p>
++          <ul>
++            <li>Allow entering any format</li>
++            <li>Display color in overview search</li>
++            <li>Export palettes to LibreOffice</li>
++            <li>A visual differentiation between color and background</li>
++            <li>Improved color conversion</li>
++            <li>Visual refinements to match the state of the art of GNOME apps</li>
++            <li>Internal code improvements and bug fixes</li>
++          </ul>
+       </description>
+     </release>
+     <release version="0.6.0" date="2023-02-24">
+@@ -163,7 +173,10 @@
+     </release>
+     <release version="0.3.1" date="2022-09-23">
+       <description translatable="no">
+-        Fixed a few bugs and added Dutch translations.
++        <p>Bugfixes release</p>
++        <ul>
++          <li>Fixed a few bugs and added Dutch translations.</li>
++        </ul>      
+       </description>
+     </release>
+     <release version="0.3.0" date="2022-09-21">
+
+From 16d52f88e6a3364cba269d2d7d973e9a7095b13e Mon Sep 17 00:00:00 2001
+From: Semen Fomchenkov <57626821+Armatik@users.noreply.github.com>
+Date: Fri, 6 Jun 2025 00:16:46 +0300
+Subject: [PATCH 2/4] refactor: remove extra bullet point for a single line
+
+Co-authored-by: FineFindus <63370021+FineFindus@users.noreply.github.com>
+---
+ data/com.github.finefindus.eyedropper.metainfo.xml.in.in | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+index 7ebd1390..df0d0bd7 100644
+--- a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
++++ b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+@@ -173,10 +173,7 @@
+     </release>
+     <release version="0.3.1" date="2022-09-23">
+       <description translatable="no">
+-        <p>Bugfixes release</p>
+-        <ul>
+-          <li>Fixed a few bugs and added Dutch translations.</li>
+-        </ul>      
++        <p>Fixed a few bugs and added Dutch translations.</p>
+       </description>
+     </release>
+     <release version="0.3.0" date="2022-09-21">
+
+From 70c7b7e0698c5ac33cc8eb12a97f734d631e858b Mon Sep 17 00:00:00 2001
+From: Semen Fomchenkov <57626821+Armatik@users.noreply.github.com>
+Date: Fri, 6 Jun 2025 00:21:51 +0300
+Subject: [PATCH 3/4] refactor: using a more appropriate text in the context of
+ information location
+
+---
+ data/com.github.finefindus.eyedropper.metainfo.xml.in.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+index df0d0bd7..7754baad 100644
+--- a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
++++ b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+@@ -49,7 +49,7 @@
+   <releases>
+     <release version="2.1.0" date="2025-03-23">
+       <description translatable="no">
+-        <p>In this version:</p>
++        <p>New feature, fixed bug and update in GNOME styling:</p>
+         <ul>
+           <li>RGB can now be displayed in decimal notation</li>
+           <li>Colors can now be directly entered, without picking a color first</li>
+
+From 33bb43c400b85d2b2da9ef0918aae73092e1c9bc Mon Sep 17 00:00:00 2001
+From: FineFindus <63370021+FineFindus@users.noreply.github.com>
+Date: Thu, 5 Jun 2025 23:54:27 +0200
+Subject: [PATCH 4/4] Update
+ data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+
+---
+ data/com.github.finefindus.eyedropper.metainfo.xml.in.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+index 7754baad..227644ee 100644
+--- a/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
++++ b/data/com.github.finefindus.eyedropper.metainfo.xml.in.in
+@@ -49,7 +49,7 @@
+   <releases>
+     <release version="2.1.0" date="2025-03-23">
+       <description translatable="no">
+-        <p>New feature, fixed bug and update in GNOME styling:</p>
++        <p>New features, fixed bugs and updates to modern GNOME styling:</p>
+         <ul>
+           <li>RGB can now be displayed in decimal notation</li>
+           <li>Colors can now be directly entered, without picking a color first</li>
