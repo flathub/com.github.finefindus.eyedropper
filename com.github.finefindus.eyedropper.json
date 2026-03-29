@@ -25,8 +25,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FineFindus/eyedropper/releases/download/v2.2.0/eyedropper-2.2.0.tar.xz",
-                    "sha256": "8cb8c4618559595c20d4be5b4bb158e3aac3f913bab5e8dbcf0953976ce92ce4"
+                    "url": "https://github.com/FineFindus/eyedropper/releases/download/v2.2.1/eyedropper-2.2.1.tar.xz",
+                    "sha256": "d81cbebf74d676c1a9fb08b5d62bdd8bceedb774bd0d3f4dce614372eec9fa4d"
 
                 }
             ]
